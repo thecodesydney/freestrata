@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+    <br>
+    <br>
+
+    {% if error %}
+     <div>{{ error }}</div>
+    {% endif %}
+    <form method="post" action="/unit_login" style="width:100%;text-align:center;">
+        PIN : <input type="text" name="unit" placeholder="Your Unit Number">
+
+        <br>
+        <br>
+
+        <div style="text-align:right;margin-right:39%">
+            <input type="submit" class="btn btn-secondary" value="Login">
+        </div>
+
+
+    </form>
+    <div style="text-align:right;margin-bottom:10%">
+            <a href="{{ url_for('admin_login') }}">Admin</a>
+
+    </div>
+{% endblock %}

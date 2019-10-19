@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Strata Issue Tracker{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div>
+
+        <br>
+        <br>
+        <div>
+            <div class="stat">
+                <h1>To do</h1><br>
+                <h1><a href="{{ url_for('issues') }}">{{ td }}</a></h1><br><br>
+            </div>
+            <div class="stat">
+                <h1>In Progress</h1><br>
+                <h1><a href="{{ url_for('issues') }}">{{ ip }}</a></h1><br><br>
+            </div>
+            <div class="stat">
+                <h1>Done</h1><br>
+                <h1><a href="{{ url_for('issues') }}">{{ done }}</a></h1><br><br>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+

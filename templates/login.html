@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <h2>Login</h2>
+    {% if error %}
+     <div>{{ error }}</div>
+    {% endif %}
+    <form method="post" action="/admin" style="width:100%;text-align:center;">
+        Email &emsp;&nbsp;&nbsp;&nbsp;&emsp; : &emsp; <input type="text" name="email" ><br><br>
+        Password &emsp; : &emsp; <input type="password" name="pass"><br><br>
+
+        <div style="text-align:right;margin-right:35%">
+            <input type="submit" class="btn btn-secondary" value="Login">
+        </div>
+
+
+    </form>
+{% endblock %}

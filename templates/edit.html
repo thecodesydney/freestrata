@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}New Issue{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <h2>Edit the Issue</h2>
+    <form method="post" action="" enctype="multipart/form-data">
+        Issue Number : {{ result[0] }} <br>
+        Description : <input type="text" name="description" value="{{ result[2] }}"><br><br>
+
+
+        <a href="{{ url_for('issues') }}" class="btn btn-secondary">Back</a>
+        <input type="submit" class="btn btn-secondary" value="SAVE">
+
+        {% if admin == 1 %}
+        <a class="btn btn-danger" href="{{ url_for('delete_issue',id= result[0]) }}">Delete</a>
+        {% endif %}
+    </form>
+{% endblock %}
